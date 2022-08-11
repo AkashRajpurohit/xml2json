@@ -1,8 +1,8 @@
 import {
   generateResponse,
   getResponseFromURL,
-  convertXMLtoJSON,
   isValidHttpUrl,
+  convertJSONtoXML,
 } from '../lib/utils';
 
 const handler = async (event) => {
@@ -23,12 +23,12 @@ const handler = async (event) => {
   }
 
   try {
-    const xmlData = await getResponseFromURL(url, 'xml');
-    const json = convertXMLtoJSON(xmlData);
+    const jsonData = await getResponseFromURL(url, 'json');
+    const xml = convertJSONtoXML(jsonData);
 
     return generateResponse({
-      body: { json },
-      contentType: 'application/json',
+      body: xml,
+      contentType: 'text/xml',
     });
   } catch (error) {
     return generateResponse({
