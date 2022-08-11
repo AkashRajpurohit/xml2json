@@ -31,6 +31,7 @@ const handler = async (event) => {
       contentType: 'application/json',
     });
   } catch (error) {
+    console.log('Error: ', error);
     return generateResponse({
       body: { error },
       statusCode: 400,
