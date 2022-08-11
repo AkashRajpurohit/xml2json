@@ -1,4 +1,8 @@
-import { generateResponse } from 'lib/utils';
+import {
+  generateResponse,
+  getResponseFromURL,
+  convertXMLtoJSON,
+} from '../lib/utils';
 
 const handler = async (event) => {
   if (event.httpMethod.toLowerCase() !== 'get') {
@@ -17,7 +21,20 @@ const handler = async (event) => {
     });
   }
 
-  return generateResponse({ hello: 'world' });
+  try {
+    const xmlData = await getResponseFromURL(url, 'application/xml');
+    const json = convertXMLtoJSON(xmlData);
+
+    return generateResponse({
+      body: { json },
+      contentType: 'application/json',
+    });
+  } catch (error) {
+    return generateResponse({
+      body: { error },
+      statusCode: 400,
+    });
+  }
 };
 
 exports.handler = handler;
