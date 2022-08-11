@@ -33,7 +33,7 @@ const handler = async (event) => {
   } catch (error) {
     console.log('Error: ', error);
     return generateResponse({
-      body: { error },
+      body: { error: error.message },
       statusCode: 400,
     });
   }
