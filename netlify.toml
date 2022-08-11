@@ -1,0 +1,14 @@
+[functions]
+  directory = "api"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/"
+  to = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" # Rick Roll
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = false
+  headers = { Access-Control-Allow-Origin = "*" }
