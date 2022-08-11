@@ -1,12 +1,14 @@
 {
-    "name": "xmltojson",
-    "repository": "https://github.com/AkashRajpurohit/xmltojson",
-    "author": "Akash Rajpurohit <akashrajpurohit.009@gmail.com>",
-    "scripts": {
-      "format": "prettier --write ."
-    },
-    "dependencies": {},
-    "devDependencies": {
-      "prettier": "^2.6.2"
-    }
+  "name": "xmltojson",
+  "repository": "https://github.com/AkashRajpurohit/xmltojson",
+  "author": "Akash Rajpurohit <akashrajpurohit.009@gmail.com>",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
   }
+}
