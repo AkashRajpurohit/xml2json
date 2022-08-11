@@ -2,6 +2,7 @@ import {
   generateResponse,
   getResponseFromURL,
   convertXMLtoJSON,
+  isValidHttpUrl,
 } from '../lib/utils';
 
 const handler = async (event) => {
