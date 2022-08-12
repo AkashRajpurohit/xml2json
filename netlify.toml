@@ -1,6 +1,13 @@
 [functions]
   directory = "api"
-  node_bundler = "esbuild"
+
+[build]
+  command = "make build"
+  functions = "api"
+[build.environment]
+  GOBIN = "/opt/build/repo/api"
+[template.environment]
+  GO_IMPORT_PATH = "github.com/AkashRajpurohit/xml2json"
 
 [[redirects]]
   from = "/"
